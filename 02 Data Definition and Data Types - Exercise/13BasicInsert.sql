@@ -27,7 +27,7 @@ CREATE TABLE `employees` (
   `department_id` INT NOT NULL,
   `hire_date` DATE,
   `salary` DECIMAL(7,2),
-  `address_id` INT NOT NULL,
+  `address_id` INT,
   FOREIGN KEY (department_id) REFERENCES departments(id),
   FOREIGN KEY (address_id) REFERENCES address(id)
   );
