@@ -11,4 +11,13 @@ ORDER BY `population` DESC, `country_name`
 LIMIT 30;
 
 -- 23. Countries and Currency (Euro / Not Euro)
+SELECT `country_name`, `country_code`, 
+CASE
+  WHEN `currency_code` = 'EUR'
+  THEN 'Euro'
+  ELSE 'Not Euro'
+END AS `currency`
+FROM `countries`
+ORDER BY `country_name`;
+
 -- 24. All Diablo Characters
