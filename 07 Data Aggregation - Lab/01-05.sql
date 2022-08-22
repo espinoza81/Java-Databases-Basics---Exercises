@@ -22,3 +22,9 @@ FROM products
 WHERE category_id = 2 AND price > 8;
 
 -- 05. Menu Prices
+SELECT category_id, 
+ROUND(avg(price), 2) AS 'Average Price',
+ROUND(min(price), 2) AS 'Cheapest Product',
+ROUND(max(price), 2) AS 'Most Expensive Product'
+FROM products
+GROUP BY category_id;
