@@ -26,11 +26,3 @@ SELECT `name`
 FROM towns
 WHERE length(`name`) IN (5, 6)
 ORDER BY `name`;
-
--- 06. Find Towns Starting With
-SELECT * 
-FROM towns
-WHERE left(`name`, 1) REGEXP 'M|K|B|E'
-ORDER BY `name`;
-
--- 07. Find Towns Not Starting With
