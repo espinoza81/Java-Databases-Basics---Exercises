@@ -21,3 +21,6 @@ timestampdiff(DAY, born, died) AS 'Days Lived'
 FROM authors;
 
 -- 05. Harry Potter Books
+SELECT title 
+FROM books
+WHERE title LIKE 'Harry Potter%';
