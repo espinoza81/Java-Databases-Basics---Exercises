@@ -17,3 +17,8 @@ GROUP BY department_id
 HAVING `Min Salary` > 800;
 
 -- 04. Appetizers Count 
+SELECT COUNT(id) 
+FROM products
+WHERE category_id = 2 AND price > 8;
+
+-- 05. Menu Prices
