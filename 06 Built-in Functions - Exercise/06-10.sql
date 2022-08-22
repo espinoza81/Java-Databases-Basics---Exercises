@@ -19,3 +19,8 @@ WHERE YEAR(hire_date) > 2000;
 SELECT * FROM v_employees_hired_after_2000;
 
 -- 09. Length of Last Name 
+SELECT first_name, last_name
+FROM employees
+WHERE length(last_name) = 5;
+
+-- 10. Countries Holding 'A'
