@@ -27,14 +27,14 @@ ORDER BY user_name;
 SELECT `name` AS 'game',
 	CASE 
 		WHEN HOUR (`start`) < 12 THEN 'Morning'
-        WHEN HOUR (`start`) >= 18 THEN 'Evening'
-        ELSE 'Afternoon'
+        	WHEN HOUR (`start`) >= 18 THEN 'Evening'
+        	ELSE 'Afternoon'
 	END AS 'Part of the Day', 
-    CASE 
+    	CASE 
 		WHEN duration <= 3 THEN 'Extra Short'
-        WHEN duration BETWEEN 3 AND 6 THEN 'Short'
-        WHEN duration BETWEEN 7 AND 10 THEN 'Long'
-        ELSE 'Extra Long'
+        	WHEN duration BETWEEN 3 AND 6 THEN 'Short'
+        	WHEN duration BETWEEN 7 AND 10 THEN 'Long'
+        	ELSE 'Extra Long'
 	END AS 'Duration'
 FROM games;
 
