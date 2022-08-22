@@ -1,2 +1,2 @@
--- 11. Mix of Peak and River Name
+-- 11. Mix of Peak and River Names
 
