@@ -15,3 +15,9 @@ AS cost
 FROM books;
 
 -- 04. Days Lived
+SELECT 
+concat_ws(' ', first_name, last_name) AS 'Full Name',
+timestampdiff(DAY, born, died) AS 'Days Lived'
+FROM authors;
+
+-- 05. Harry Potter Books
