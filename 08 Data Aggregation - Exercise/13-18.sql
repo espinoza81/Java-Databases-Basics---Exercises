@@ -30,7 +30,7 @@ FROM employees
 WHERE manager_id IS NULL;
 
 -- 16. 3rd Highest Salary
-SELECT  department_id,
+SELECT DISTINCT department_id,
         (
         SELECT  DISTINCT salary 
         FROM    employees e
@@ -39,8 +39,22 @@ SELECT  department_id,
         LIMIT 1 OFFSET 2
         ) AS third_highest_salary
 FROM    employees
-GROUP BY department_id
 HAVING third_highest_salary IS NOT NULL
 ORDER BY department_id;
 
 -- 17. Salary Challenge
+SELECT first_name, last_name, department_id
+FROM employees f
+WHERE salary > (
+	SELECT avg(salary)
+	FROM employees e
+	WHERE e.department_id = f.department_id
+	)
+ORDER BY department_id, employee_id
+LIMIT 10;
+
+-- 18. Departments Total Salaries
+SELECT department_id, SUM(salary) AS total_salary
+FROM employees
+GROUP BY department_id
+ORDER BY department_id;
