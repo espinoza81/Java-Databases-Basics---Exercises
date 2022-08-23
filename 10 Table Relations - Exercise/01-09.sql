@@ -3,7 +3,6 @@ CREATE TABLE passports (
    passport_id INT PRIMARY KEY AUTO_INCREMENT,
    passport_number VARCHAR(45) UNIQUE);
   
-
 INSERT INTO passports (passport_id, passport_number) 
 VALUES 
 	(101, 'N34FG21B'), 
@@ -19,7 +18,6 @@ CONSTRAINT fk_pe_pa
 FOREIGN KEY (passport_id)
 REFERENCES passports(passport_id));
   
-
 INSERT INTO people (person_id, first_name, salary,	passport_id) 
 VALUES 
 	(1, 'Roberto', 43300.00, 102), 
