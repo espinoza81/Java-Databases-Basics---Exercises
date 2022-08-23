@@ -7,9 +7,9 @@ CREATE TABLE peaks (
    id INT PRIMARY KEY,
    name VARCHAR(45),
    mountain_id INT,
-   CONSTRAINT fk_p_m
-   FOREIGN KEY (mountain_id)
-   REFERENCES mountains(id));
+CONSTRAINT fk_p_m
+FOREIGN KEY (mountain_id)
+REFERENCES mountains(id));
    
-   -- 02. Trip Organization
+-- 02. Trip Organization
    
