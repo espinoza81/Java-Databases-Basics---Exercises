@@ -118,3 +118,12 @@ ALTER TABLE teachers
 ADD CONSTRAINT fk
 FOREIGN KEY (manager_id)
 REFERENCES teachers (teacher_id);
+
+-- 09. Peaks in Rila
+
+SELECT m.mountain_range, p.peak_name, p.elevation
+FROM mountains AS m
+INNER JOIN peaks AS p
+ON m.id = p.mountain_id
+WHERE m.mountain_range = 'Rila'
+ORDER BY p.elevation DESC;
