@@ -50,7 +50,7 @@ WHERE m.mountain_id IS NULL;
 -- 17. Highest Peak and Longest River by Country
 SELECT country_name,
 
-	(
+    (
     SELECT MAX(p.elevation)
     FROM mountains_countries
     LEFT JOIN peaks AS p USING (mountain_id)
