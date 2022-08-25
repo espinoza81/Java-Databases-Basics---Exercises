@@ -42,3 +42,9 @@ HAVING currency_usage = (
 ORDER BY continent_code , currency_code;
 
 -- 16. Countries without any Mountains
+SELECT count(c.country_code)
+FROM countries AS c
+LEFT JOIN mountains_countries AS m USING (country_code)
+WHERE m.mountain_id IS NULL;
+
+-- 17. Highest Peak and Longest River by Country
