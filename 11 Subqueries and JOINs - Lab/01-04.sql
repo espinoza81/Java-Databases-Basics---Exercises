@@ -20,3 +20,8 @@ FROM employees
 WHERE manager_id IS NULL;
 
 -- 04. High Salary
+SELECT count(employee_id)
+FROM employees
+WHERE salary > (
+		SELECT avg(salary)
+		FROM employees);
