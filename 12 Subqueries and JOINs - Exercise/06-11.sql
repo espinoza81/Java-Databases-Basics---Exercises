@@ -1,11 +1,3 @@
--- 06. Employees Hired After
-SELECT e.first_name, e.last_name, e.hire_date, d.`name`
-FROM employees AS e
-INNER JOIN departments AS d
-ON e.department_id = d.department_id
-WHERE d.`name` IN ('Sales', 'Finance') AND e.hire_date > '1999-01-01 00:00:00'
-ORDER BY e.hire_date;
-
 -- 07. Employees with Project
 SELECT e.employee_id, e.first_name, p.`name`
 FROM employees AS e
@@ -28,3 +20,13 @@ WHERE e.employee_id = 24
 ORDER BY p.`name`;
 
 -- 09. Employee Manager 
+SELECT e1.employee_id, e1.first_name, e1.manager_id, (
+	SELECT e2.first_name
+    FROM employees AS e2
+    WHERE e1.manager_id = e2.employee_id
+    ) AS manager_name
+FROM employees AS e1
+WHERE e1.manager_id IN (3, 7)
+ORDER BY e1.first_name;
+
+-- 10. Employee Summary
