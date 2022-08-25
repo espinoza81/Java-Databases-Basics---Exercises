@@ -10,9 +10,21 @@ ORDER BY e.hire_date;
 SELECT e.employee_id, e.first_name, p.`name`
 FROM employees AS e
 	JOIN employees_projects AS ep USING (employee_id)
-    JOIN projects AS p USING (project_id)
+    	JOIN projects AS p USING (project_id)
 WHERE DATE(p.start_date) > '2002-08-13' AND p.end_date IS NULL
 ORDER BY e.first_name, p.`name`
 LIMIT 5;
 
 -- 08. Employee 24
+SELECT e.employee_id, e.first_name, 
+	CASE 
+		WHEN DATE(p.start_date) <= '2004-12-31' THEN p.`name`
+        ELSE NULL
+	END AS project_name
+FROM employees AS e
+	JOIN employees_projects AS ep USING (employee_id)
+    	JOIN projects AS p USING (project_id)
+WHERE e.employee_id = 24
+ORDER BY p.`name`;
+
+-- 09. Employee Manager 
