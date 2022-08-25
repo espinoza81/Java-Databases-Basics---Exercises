@@ -30,3 +30,18 @@ WHERE e1.manager_id IN (3, 7)
 ORDER BY e1.first_name;
 
 -- 10. Employee Summary
+SELECT e1.employee_id, 
+	concat_ws(' ', e1.first_name, e1.last_name) AS employee_name, 
+    (
+		SELECT concat_ws(' ', e2.first_name, e2.last_name)
+		FROM employees AS e2
+		WHERE e1.manager_id = e2.employee_id
+    ) AS manager_name,
+    d.`name` AS department_name
+FROM employees AS e1
+JOIN departments AS d USING (department_id)
+HAVING manager_name IS NOT NULL
+ORDER BY e1.employee_id
+LIMIT 5;
+
+-- 11. Min Average Salary
