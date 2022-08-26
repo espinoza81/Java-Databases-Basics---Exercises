@@ -4,8 +4,8 @@ RETURNS INT
 DETERMINISTIC
 BEGIN
 	DECLARE e_count INT;
-		SET e_count := ( 
-			SELECT count(employee_id)
+	    SET e_count := ( 
+            SELECT count(employee_id)
             FROM employees
             JOIN addresses USING (address_id)
             JOIN towns AS t USING (town_id)
