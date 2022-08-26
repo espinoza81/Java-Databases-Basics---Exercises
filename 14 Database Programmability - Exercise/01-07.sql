@@ -71,3 +71,9 @@ BEGIN
 END;
 
 -- 07. Define Function
+CREATE FUNCTION ufn_is_word_comprised(set_of_letters varchar(50), word varchar(50))
+RETURNS INTEGER
+DETERMINISTIC
+BEGIN
+	RETURN REGEXP_LIKE(lower(word), CONCAT('^[', lower(set_of_letters), ']+$'));
+END
