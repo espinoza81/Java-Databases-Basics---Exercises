@@ -17,3 +17,12 @@ BEGIN
 END
 
 -- 03. Town Names Starting With
+CREATE PROCEDURE usp_get_towns_starting_with(started_with VARCHAR (50)) 
+BEGIN
+    SELECT `name`
+	FROM towns
+    WHERE lower(`name`) LIKE lower(concat(started_with, '%'))
+    ORDER BY `name`;
+END
+
+-- 04. Employees from Town 
