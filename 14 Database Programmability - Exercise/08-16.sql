@@ -18,3 +18,13 @@ BEGIN
 END
 
 -- 10. Future Value Function
+CREATE FUNCTION ufn_calculate_future_value(sum DECIMAL(19, 4), yearly_interest DOUBLE, yers INT)
+RETURNS DECIMAL(19, 4)
+DETERMINISTIC
+BEGIN
+	DECLARE future_sum DECIMAL(19, 4);
+    SET future_sum := sum * pow(1 + yearly_interest, yers);
+    RETURN future_sum;
+END
+
+-- 11. Calculating Interest
